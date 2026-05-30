@@ -24,7 +24,9 @@ jobs:
 
     - name: Run MLProject (Training & Artifacts Logging)
       env:
-        DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
+        MLFLOW_TRACKING_URI: "https://dagshub.com/karimaulya/Eksperimen_SML_Karima-Ulya-Hermawan.mlflow"
+        MLFLOW_TRACKING_USERNAME: "karimaulya"
+        MLFLOW_TRACKING_PASSWORD: ${{ secrets.DAGSHUB_TOKEN }}
       run: |
         # Berjalan di dalam folder MLProject
         mlflow run MLProject --env-manager=local
